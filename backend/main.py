@@ -7,7 +7,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.routers import users, auth, countries, institution, contact
 from backend.database import engine, Base
 
+# Set up logging to stdout in case file logging fails
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
+logger = logging.getLogger(__name__)
+
+# Load environment variables from .env file
 load_dotenv()
+
 # Create the database tables
 Base.metadata.create_all(bind=engine)
 
@@ -32,10 +38,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Set up logging
-logging.basicConfig(filename='api.log', level=logging.INFO, format='%(asctime)s %(message)s')
-logger = logging.getLogger(__name__)
-
 # Middleware to log requests and responses
 @app.middleware("http")
 async def log_requests(request: Request, call_next):
@@ -43,7 +45,6 @@ async def log_requests(request: Request, call_next):
     response = await call_next(request)
     logger.info(f"Response status: {response.status_code}")
     logger.info(f"Response headers: {response.headers}")
-
     return response
 
 # Include routers
@@ -56,6 +57,7 @@ app.include_router(contact.router, prefix="/api/contact", tags=["contact"])
 # Root endpoint
 @app.get("/")
 def read_root():
+    logger.debug("Root endpoint called")  # Debugging statement
     return {"message": "Welcome to the API"}
 
 # Run the application
