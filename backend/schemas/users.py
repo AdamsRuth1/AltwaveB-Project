@@ -9,10 +9,11 @@ class UserBase(BaseModel):
 
     @validator('phone_number')
     def phone_number_must_include_country_code(cls, v):
-        print("Validating phone number:", v)  # Debugging statement
+        print("Validating phone number:", v, type(v))  # Detailed debugging 
+        if not isinstance(v, str):  # Check if v is even a string
+            raise ValueError(f"Invalid phone number type: {type(v)}")
         if not v.startswith('+'):
             raise ValueError('Phone number must include country code. Example: +123456789')
-        print("Phone number validated:", v)  # Debugging statement
         return v
 
 class UserCreate(UserBase):

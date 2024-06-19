@@ -1,13 +1,18 @@
 from fastapi import APIRouter, Depends, HTTPException
+import logging
 from sqlalchemy.orm import Session
 from .. import models, schemas, services
 from ..database import get_db
 
 router = APIRouter()
 
+logger = logging.getLogger(__name__)
+
 @router.post("/contacts/", response_model=schemas.Contact)
 def create_contact(contact: schemas.ContactCreate, db: Session = Depends(get_db)):
+    logger.debug(f"create_contact called with: {contact}")  # Debugging statement
     return services.ContactService.create_contact(db, contact)
+
 
 @router.get("/contacts/", response_model=list[schemas.Contact])
 def read_contacts(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
