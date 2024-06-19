@@ -7,6 +7,10 @@ class InstitutionBase(BaseModel):
     payment_type: str = Field(..., alias="paymentType")
     contact_email: EmailStr = Field(..., alias="contactEmail")
 
+    def __init__(self, **data):
+        print("InstitutionBase data:", data)  # Debugging statement
+        super().__init__(**data)
+
 class InstitutionCreate(InstitutionBase):
     pass
 

@@ -1,7 +1,6 @@
 from pydantic import BaseModel, EmailStr, validator
 from typing import Optional
 
-
 class UserBase(BaseModel):
     email: EmailStr
     first_name: str
@@ -10,8 +9,10 @@ class UserBase(BaseModel):
 
     @validator('phone_number')
     def phone_number_must_include_country_code(cls, v):
+        print("Validating phone number:", v)  # Debugging statement
         if not v.startswith('+'):
             raise ValueError('Phone number must include country code. Example: +123456789')
+        print("Phone number validated:", v)  # Debugging statement
         return v
 
 class UserCreate(UserBase):

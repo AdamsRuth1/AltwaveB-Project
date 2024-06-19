@@ -6,6 +6,10 @@ class ContactBase(BaseModel):
     email: EmailStr = Field(..., alias='email')
     message: str = Field(..., alias='message')
 
+    def __init__(self, **data):
+        print("ContactBase data:", data)  # Debugging statement
+        super().__init__(**data)
+
 class ContactCreate(ContactBase):
     pass
 
