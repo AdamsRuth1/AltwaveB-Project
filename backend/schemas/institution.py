@@ -1,6 +1,5 @@
 from pydantic import BaseModel, Field, EmailStr
 
-
 class InstitutionBase(BaseModel):
     school_name: str = Field(..., alias="schoolName")
     country_name: str = Field(..., alias="countryName")
@@ -8,10 +7,8 @@ class InstitutionBase(BaseModel):
     payment_type: str = Field(..., alias="paymentType")
     contact_email: EmailStr = Field(..., alias="contactEmail")
 
-
 class InstitutionCreate(InstitutionBase):
     pass
-
 
 class Institution(InstitutionBase):
     id: int
