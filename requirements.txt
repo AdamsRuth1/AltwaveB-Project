@@ -14,3 +14,5 @@ starkbank-ecdsa==2.2.0
 typing_extensions==4.12.2
 urllib3==2.2.1
 wheel==0.43.0
+fastapi==0.68.1
+uvicorn==0.15.0
