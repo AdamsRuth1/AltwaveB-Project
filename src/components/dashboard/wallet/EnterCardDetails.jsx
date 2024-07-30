@@ -9,7 +9,7 @@ export default function EnterCardDetails({ onClose }) {
   const [showTopUpCard, setShowTopUpCard] = useState(false);
 
   const handleProceedClick = (event) => {
-    event.preventDefault(); // Prevent form from submitting if using manual handling
+    event.preventDefault(); 
     setShowTopUpCard(true);
   };
 

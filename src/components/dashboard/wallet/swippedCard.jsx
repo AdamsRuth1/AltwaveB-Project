@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
+import successLogo from "../../../assets/images/Success checkmark.png";
 import { Navigation } from "swiper/modules";
 
 export default function Swip() {
@@ -25,7 +26,7 @@ export default function Swip() {
       ) : (
         <>
           <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-            <SwiperSlide>Slide 1</SwiperSlide>
+            <SwiperSlide><img src={successLogo}/></SwiperSlide>
             <SwiperSlide>Slide 2</SwiperSlide>
             <SwiperSlide>Slide 3</SwiperSlide>
             <SwiperSlide>Slide 4</SwiperSlide>
