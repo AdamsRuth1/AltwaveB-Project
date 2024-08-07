@@ -17,6 +17,7 @@ import Dashboard from "./components/dashboard/dashbord/DashboardHome";
 import Eservice from "./components/E-service/Services";
 import Tuition from "./components/dashboard/PayTuition/Tuition";
 import Wallet from "./components/dashboard/wallet/Wallets";
+import TargetSavings from "./components/dashboard/target-Savings/target";
 
 import "./index.css";
 
@@ -25,7 +26,7 @@ function App() {
 
   return (
     <SignupContextProvider>
-      <CardProvider> {/* Updated provider name */}
+      <CardProvider> 
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -53,6 +54,10 @@ function App() {
             <Route
               path="/dashboard/wallet"
               element={isLoggedIn ? <Wallet /> : <SignIn />}
+            />
+             <Route
+              path="/dashboard/target-savings"
+              element={isLoggedIn ? <TargetSavings /> : <SignIn />}
             />
           </Routes>
         </Router>

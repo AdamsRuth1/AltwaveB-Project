@@ -41,6 +41,7 @@ const PaymentInformation = ({ Next }) => {
       <div className="w-full  pt-[4rem]">
         <TuitionHeader
           count="2"
+          Total={5}
           Header=" Payment Information"
           Paragraph="Confirm the amount you’re sending before proceeding"
         />

@@ -12,6 +12,7 @@ const TransactionSummary = ({
     <div className=" pt-[4rem]  ">
       <TuitionHeader
         count="4"
+        Total={5}
         Header="Transaction Summary"
         Paragraph=" To ensure a successful transaction, verify your details and confirm
         before proceeding to payment."

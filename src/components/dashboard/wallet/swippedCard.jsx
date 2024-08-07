@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "../../../../src/swipper.css"
+import "../../../../src/swipper.css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { Navigation } from "swiper/modules";
 import { useCardContext } from "../../../context/CardContext";
-import FirstCard from './cardDesign';
-import SecondCard from './cardDesign1';
-import ThirdCard from './cardDesign3';
-import FourthCard from './cardDesign4';
-import EnterCardDetails from './EnterCardDetails'; 
+import FirstCard from "./cardDesign";
+import SecondCard from "./cardDesign1";
+import ThirdCard from "./cardDesign3";
+import FourthCard from "./cardDesign4";
+import EnterCardDetails from "./EnterCardDetails";
 
 export default function Swip() {
   const { setCardDetails } = useCardContext();
@@ -19,13 +19,13 @@ export default function Swip() {
   const [showEnterCardDetails, setShowEnterCardDetails] = React.useState(false);
 
   const handleCardClick = (card) => {
-    console.log('Card clicked:', card);
+    console.log("Card clicked:", card);
     setSelectedCard(card);
     setCardDetails(card);
   };
 
   const handleProceedClick = () => {
-    console.log('Proceed clicked');
+    console.log("Proceed clicked");
     if (selectedCard) {
       setShowEnterCardDetails(true);
     }
@@ -47,28 +47,38 @@ export default function Swip() {
             </h6>
           </div>
           <Swiper
-            slidesPerView={'auto'}
+            slidesPerView={"auto"}
             centeredSlides={true}
             spaceBetween={30}
             navigation={true}
             modules={[Navigation]}
-            
             className="mySwiper w-full h-full"
           >
-            <SwiperSlide onClick={() => handleCardClick(<FirstCard />)} className="swiper-slide img mr-10 ml-4">
+            <SwiperSlide
+              onClick={() => handleCardClick(<FirstCard />)}
+              className="swiper-slide img mr-10 ml-4"
+            >
               <FirstCard />
             </SwiperSlide>
-            <SwiperSlide onClick={() => handleCardClick(<SecondCard />)} className="swiper-slide img ml-10 ">
+            <SwiperSlide
+              onClick={() => handleCardClick(<SecondCard />)}
+              className="swiper-slide img ml-10 "
+            >
               <SecondCard />
             </SwiperSlide>
-            <SwiperSlide onClick={() => handleCardClick(<ThirdCard />)} className="swiper-slide img  mr-10 ml-10">
+            <SwiperSlide
+              onClick={() => handleCardClick(<ThirdCard />)}
+              className="swiper-slide img  mr-10 ml-10"
+            >
               <ThirdCard />
             </SwiperSlide>
-            <SwiperSlide onClick={() => handleCardClick(<FourthCard />)} className="swiper-slide img">
+            <SwiperSlide
+              onClick={() => handleCardClick(<FourthCard />)}
+              className="swiper-slide img"
+            >
               <FourthCard />
             </SwiperSlide>
           </Swiper>
-          
 
           <button
             onClick={handleProceedClick}

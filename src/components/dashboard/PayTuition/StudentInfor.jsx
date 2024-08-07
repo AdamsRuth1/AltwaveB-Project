@@ -6,6 +6,7 @@ const StudentInfor = ({ Next }) => {
     <div className="w-full pt-[4rem] -ml-[3rem]  ">
       <TuitionHeader
         count="3"
+        Total={5}
         Header="Student Information"
         Paragraph="Enter students details to be sent to the school."
       />
