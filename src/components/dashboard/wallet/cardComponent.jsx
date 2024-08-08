@@ -145,7 +145,7 @@ export default function Card() {
                 </button>
               </div>
               <div className="mt-4 flex">
-                <Button onClick={topUp} className="flex text-lg mr-6">
+                <Button onClick={() => setShowModal(true)} className="flex text-lg mr-6">
                   <img src={Framer} />
                   <span className="ml-2">TopUp</span>
                 </Button>
@@ -156,7 +156,7 @@ export default function Card() {
                     padding: "8px 24px",
                     color: "#A1A4A8",
                   }}
-                  onClick={() => setShowModal(true)}
+                  
                 >
                   <span className="mr-2">Send</span>
                   <img src={Framer2} />
