@@ -21,7 +21,7 @@ export default function SeeCardDetails() {
         </div>
       </div>
 
-      <div className="flex justify-between mt-[-120px]">
+      <div className="flex justify-between ">
         <div className="flex flex-col">
           <p className="mb-[8px] moderat-font text-base text-[#A1A4A8]">Card Name</p>
           <p className="moderat-font text-lg font-bold text-[#0A0E27]">{enteredDetails.cardType || "N/A"}</p>

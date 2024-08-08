@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Details from "./detailsComponent";
 import RoundedCircleButton from "./dotted";
 import Search from "./searchFilter"; 
-import Card1 from './cardDesign';
-import Card2 from './cardDesign1';
-import Card3 from './cardDesign3';
-import Card4 from './cardDesign4';
+// import Card1 from './cardDesign';
+// import Card2 from './cardDesign1';
+// import Card3 from './cardDesign3';
+// import Card4 from './cardDesign4';
 
 const Cards = [
   {
