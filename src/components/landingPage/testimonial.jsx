@@ -1,6 +1,6 @@
 import { BsStarFill } from "react-icons/bs";
 import Avatar from "../../assets/images/Avatars.png";
-import "./testimonial.css"; // Import the CSS file
+import "./Testimonial.css"; // Import the CSS file
 
 function Testimonial() {
   return (

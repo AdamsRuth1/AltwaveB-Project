@@ -161,6 +161,7 @@ const SignupForm = () => {
           className={`input-style w-[81%] h-[48px] ${
             errorMessage.email ? "error-border" : ""
           }`}
+          required
         />
         <div className="flex  py-[1.5rem]">
           <div>
@@ -175,6 +176,7 @@ const SignupForm = () => {
               className={`input-style h-[48px] w-[92%] ${
                 errorMessage.first_name ? "error-border" : ""
               }`}
+              required
             />
           </div>
           <div>
@@ -189,6 +191,7 @@ const SignupForm = () => {
               className={`input-style w-[84%]  h-[48px] ${
                 errorMessage.last_name ? "error-border" : ""
               }`}
+              required
             />
           </div>
         </div>
@@ -203,6 +206,7 @@ const SignupForm = () => {
             className={`input-style w-[81%]   h-[48px] ${
               errorMessage.password ? "error-border" : ""
             }`}
+            required
           />
           <span className="eyeIcon" onClick={handlePasswordVisibility}>
             {showpassword ? (
@@ -266,6 +270,7 @@ const SignupForm = () => {
               value={state.phone_number}
               onChange={handleChange}
               placeholder="+ Country Code Phone Number"
+              required
             />
           </div>
         </div>

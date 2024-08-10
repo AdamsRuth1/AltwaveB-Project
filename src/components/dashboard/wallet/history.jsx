@@ -1,5 +1,5 @@
 import React from "react";
-import HistoryComponent from "./historyComponent";
+import HistoryComponent from "./HistoryComponent";
 const history = () => {
   return (
     <>

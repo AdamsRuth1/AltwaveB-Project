@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Coin from "../../../assets/images/151055041_b058e357-f1d4-48f6-8977-25b8bead6dcc-removebg-preview 1.png";
 import Coin1 from "../../../assets/images/151055041_b058e357-f1d4-48f6-8977-25b8bead6dcc-removebg-preview 2.png";
 import Image from "../../../assets/images/2151266604 (1) 1.png";
-import Button from "../wallet/button";
-import Ongoing from "./ongoing";
-import Completed from "./completed";
-import Tuition from "./planCreate";
+import Ongoing from "./Ongoing";
+import Completed from "./Completed";
+import Tuition from "./PlanCreate";
 import Terminated from "./terminated";
+import Button from "./Button";
 
 export default function CreatePlan() {
     const [showTuition, setTuition] = useState(false);

@@ -5,19 +5,19 @@ import {
 } from "react-router-dom";
 import { SignupContextProvider } from "./context/SignupContext";
 import { CardProvider } from "./context/CardContext"; // Updated import name
-import Landing from "./components/landingPage/landingPage";
-import EnrollPage from "./components/onboarding/Enroll";
-import SignIn from "./components/onboarding/SignIn";
-import SignUp from "./components/onboarding/SignUp";
-import Blog from "./components/onboarding/BlogPage";
-import EnrollSuccess from "./components/onboarding/EnrollSuccess";
-import ContactUs from "./components/onboarding/contactUs/contactus";
-import Faq from "./components/landingPage/faq";
-import Dashboard from "./components/dashboard/dashbord/DashboardHome";
+import Landing from "./components/LandingPage/LandingPage";
+import EnrollPage from "./components/Onboarding/Enroll";
+import SignIn from "./components/Onboarding/SignIn";
+import SignUp from "./components/Onboarding/SignUp";
+import Blog from "./components/Onboarding/BlogPage";
+import EnrollSuccess from "./components/Onboarding/EnrollSuccess";
+import ContactUs from "./components/Onboarding/ContactUs/Contactus";
+import Faq from "./components/LandingPage/Faq";
+import Dashboard from "./components/Dashboard/Dashbord/DashboardHome";
 import Eservice from "./components/E-service/Services";
-import Tuition from "./components/dashboard/PayTuition/Tuition";
-import Wallet from "./components/dashboard/wallet/Wallets";
-import TargetSavings from "./components/dashboard/target-Savings/target";
+import Tuition from "./components/Dashboard/PayTuition/Tuition";
+import Wallet from "./components/Dashboard/wallet/Wallets";
+import TargetSavings from "./components/Dashboard/Target-Savings/target";
 
 import "./index.css";
 
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <SignupContextProvider>
-      <CardProvider> 
+      <CardProvider>
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -55,13 +55,13 @@ function App() {
               path="/dashboard/wallet"
               element={isLoggedIn ? <Wallet /> : <SignIn />}
             />
-             <Route
+            <Route
               path="/dashboard/target-savings"
               element={isLoggedIn ? <TargetSavings /> : <SignIn />}
             />
           </Routes>
         </Router>
-      </CardProvider> {/* Updated provider name */}
+      </CardProvider>
     </SignupContextProvider>
   );
 }

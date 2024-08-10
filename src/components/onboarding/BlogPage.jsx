@@ -1,4 +1,4 @@
-import Header from "../views/header";
+import Header from "../Views/Header";
 import Logo from "../../assets/images/SigninLogo copy.svg";
 import Input from "../Blog/Input";
 import { useState } from "react";
@@ -13,7 +13,7 @@ import Blog6 from "../../assets/images/Blogimage6.png";
 import Pagination from "../Blog/Pagination";
 import Newsletter from "../Blog/Newletter";
 import searchIcon from "../../assets/Icons/search-icon.png";
-import Footer from "../views/footer";
+import Footer from "../Views/Footer";
 const BlogPage = () => {
   const Blogs = [
     {

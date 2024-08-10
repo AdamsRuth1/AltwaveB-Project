@@ -1,11 +1,11 @@
-import Dashboard from "../views/dashboard";
+import Dashboard from "../Views/Dashboard";
 import EserviceInfor from "../E-service/EserviceInfor";
 import { useState } from "react";
-import TuitionStatus from "../dashboard/PayTuition/TuitionStatus";
+import TuitionStatus from "../Dashboard/PayTuition/TuitionStatus";
 import PaymentInformation from "../E-service/PaymentInformation";
 import { servicesStatus } from "../../constants/SidebarData";
 // import CompletePayment from "../dashboard/PayTuition/CompletePayment";
-import CompletePayment from "../dashboard/PayTuition/CompletePayment";
+import CompletePayment from "../Dashboard/PayTuition/CompletePayment";
 const Services = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const handleNext = () => {

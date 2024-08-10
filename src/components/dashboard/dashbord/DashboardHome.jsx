@@ -2,37 +2,32 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Profile from "../../../assets/images/Profile empty.png";
 import logo from "../../../assets/images/Vector (4).png";
-import Dashboard from "../../views/dashboard";
+import Dashboard from "../../Views/Dashboard";
 import PaginationBtn from './pagination';
-import HeaderMessage from "../../views/messageDashboard";
+import HeaderMessage from "../../Views/MessageDashboard";
+
 const DashboardHome = () => {
   const [hasMadePayment, setHasMadePayment] = useState(false);
   const [transactions, setTransactions] = useState([]);
   const firstname = JSON.parse(localStorage.getItem("first_name"));
+
   useEffect(() => {
-    const fetchPaymentData = async () => {
-      try {
-        const response = await fetch("", {});
-        if (response.ok) {
-          const data = await response.json();
-          if (data.hasMadePayment) {
-            setHasMadePayment(true);
-            setTransactions(data.transactions);
-          }
-        } else {
-          throw new Error("Failed to fetch payment data");
-        }
-      } catch (error) {
-        console.error("Error fetching payment data:", error);
+    // Fetch transactions from local storage
+    const fetchTransactions = () => {
+      const savedTransactions = JSON.parse(localStorage.getItem("transactions")) || [];
+      if (savedTransactions.length > 0) {
+        setHasMadePayment(true);
+        setTransactions(savedTransactions);
       }
     };
 
-    fetchPaymentData();
+    fetchTransactions();
   }, []);
+
   return (
     <Dashboard className="relative">
       <div className="absolute right-10 top-[18]">
-      <HeaderMessage  />
+        <HeaderMessage />
       </div>
       <div className="mt-16 flex flex-col items-center">
         <div className="mb-4">
@@ -48,7 +43,7 @@ const DashboardHome = () => {
         </div>
       </div>
       {hasMadePayment ? (
-        <div className="bg-customLightBlueGray mt-16 rounded-lg border-b shadow-sm w-2/4 flex flex-col text-center">
+        <div className="bg-customLightBlueGray mt-16 rounded-lg border-b shadow-sm w-[90%] flex flex-col text-center">
           <div className="my-20">
             <div className="mb-10 flex justify-center">
               <img src={logo} alt="Logo" />
@@ -57,20 +52,23 @@ const DashboardHome = () => {
               <h1 className="font-Modarat font-bold text-2xl text-customBlack mb-4">
                 Your Transactions
               </h1>
-              <ul className="text-left flex justify-between">
+              <div className="mt-8" style={{ marginLeft: "32px", marginRight: "32px" }}>
                 {transactions.map((transaction) => (
-                  <li key={transaction.id}>
-                    <p>{transaction.description}</p>
-                    <p>{transaction.amount}</p>
-                  </li>
+                  <div key={transaction.id} className="flex pb-10 items-center">
+                    <div className="flex flex-col w-full">
+                      <div className="flex justify-between items-center">
+                        <p className="font-medium font-Modarat text-lg">Transaction Id: <span className="font-bold">{transaction.id}</span></p>  
+                        <p style={{ color: "#606569" }} className="text-sm font-Modarat">{transaction.paymentType}</p>                     
+                         <p className="text-right font-base font-Modarat text-customBlack">Amount: ₦{transaction.amount.toFixed(2)}</p>
+                        <p  className="text-right font-base font-Modarat text-customBlack">Date: {new Date(transaction.date).toLocaleString()}</p>
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
-          <div className="mt-10 flex mb-72">
-                <PaginationBtn previousUrl="/previous-page" nextUrl="/next-page" />
-
-          </div>
+        
         </div>
       ) : (
         <div className="bg-customLightBlueGray mt-16 rounded-lg border-b shadow-sm w-2/4 flex flex-col text-center">
@@ -88,9 +86,8 @@ const DashboardHome = () => {
               </p>
             </div>
             <Link
-              to="/dashboard/tuition
-            "
-              className="bg-customButton  text-white font-Modarat text-lg py-3 px-6 rounded-lg mb-10"
+              to="/dashboard/tuition"
+              className="bg-customButton text-white font-Modarat text-lg py-3 px-6 rounded-lg mb-10"
             >
               Make Payment
             </Link>
@@ -98,8 +95,7 @@ const DashboardHome = () => {
         </div>
       )}
       <div className="mt-10 flex mb-72">
-      <PaginationBtn previousUrl="/previous-page" nextUrl="/next-page" />
-
+        <PaginationBtn previousUrl="/previous-page" nextUrl="/next-page" />
       </div>
     </Dashboard>
   );

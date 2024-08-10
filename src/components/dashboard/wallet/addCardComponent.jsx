@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Details from "./detailsComponent";
-import RoundedCircleButton from "./dotted";
-import Search from "./searchFilter"; 
+import Details from "./DetailsComponent";
+import RoundedCircleButton from "./Dotted";
+import Search from "./SearchFilter"; 
 // import Card1 from './cardDesign';
 // import Card2 from './cardDesign1';
 // import Card3 from './cardDesign3';

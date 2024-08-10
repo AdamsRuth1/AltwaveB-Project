@@ -1,5 +1,5 @@
-import TuitionHeader from "../../components/dashboard/PayTuition/TuitionHeader";
-import TuitionButton from "../dashboard/PayTuition/TuitionButton";
+import TuitionHeader from "../Dashboard/PayTuition/TuitionHeader";
+import TuitionButton from "../Dashboard/PayTuition/TuitionButton";
 const PaymentInformation = ({ Next }) => {
   return (
     <div className="ml-[2.5rem]">

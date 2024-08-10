@@ -1,5 +1,5 @@
-import TuitionHeader from "../../components/dashboard/PayTuition/TuitionHeader";
-import Button from "../dashboard/Button";
+import TuitionHeader from "../Dashboard/PayTuition/TuitionHeader";
+import Button from "../Dashboard/Button";
 import ArrowDown from "../../assets/Icons/Arrrow-down.svg";
 import CourseraPopup from "../E-service/CourseraPopup";
 import { useState } from "react";

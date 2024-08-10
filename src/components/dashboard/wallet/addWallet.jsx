@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import AddWallet from "./addCardComponent";
-import Pop from "./popUp";
-import Card1 from "./cardDesign";
-import Card2 from "./cardDesign1";
-import Card3 from "./cardDesign3";
+import Pop from "./PopUp";
+import Card1 from "./CardDesign";
+import Card2 from "./CardDesign1";
+import Card3 from "./CardDesign3";
 import card1 from "../../../assets/images/Card 7.png";
 import card2 from "../../../assets/images/Cards.png";
 import card3 from "../../../assets/images/Group 56.png";
@@ -11,7 +11,7 @@ import card3 from "../../../assets/images/Group 56.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "./prev.css";
+import "./Prev.css";
 // import "../../../../src/swipper.css"
 
 import { Pagination } from "swiper/modules";

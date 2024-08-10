@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Close from "../../../assets/images/close.png";
 import USFlag from "../../../assets/images/Frame 373.png";
 import Arrow from "../../../assets/images/Icons Right.png";
-import PrepingCard from "./prepingCard";
+import PrepingCard from "./PrepingCard";
 import { useCardContext } from "../../../context/CardContext"; // Adjust path as necessary
 
 

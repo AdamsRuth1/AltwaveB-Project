@@ -1,14 +1,6 @@
 import Vector from "../../../assets/images/VectorX.png"
 export default function Completed() {
     return(
-        // <div className="border-b">
-        //     <div className="flex justify-between py-6 px-6 bg-white  rounded" style={{border:"1px solid #CCCCCC ",}}> 
-        //         <button className="mr-[355px] text-[#4B56A0] bg-[#F8FAFD] 
-        //           font-Modarat text-base text-center " style={{ borderRadius:"99px", width:"85px", height:"40px"}}>  Ongoing</button>
-        //         <div className="bg-[#CCCCCC0D] " style={{borderRadius:"100%", padding:"8px"}}><img className="w-[24px] h-[24px]" src={Vector}/></div>
-        //     </div>
-        //    heoo
-        // </div>
         <div
         className=" justify-between bg-white  rounded-xl"
         style={{ border: "1px solid #CCCCCC0D " }}

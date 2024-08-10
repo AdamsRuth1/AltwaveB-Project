@@ -1,87 +1,83 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
 import Looper from "../../../assets/images/Looper-1.png";
 import ReactFlagsSelect from "react-flags-select";
 import Framer from "../../../assets/images/Frame.png";
 import Framer2 from "../../../assets/images/Frame (1).png";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
-import History from "./history";
-import Button from "./button";
-import AddWallet from "./addWallet";
+import History from "./History";
+import Button from "../Target-Savings/Button";
+import AddWallet from "./AddWallet";
 
 export default function Card() {
   const [selected, setSelected] = useState("US");
   const [showAmount, setShowAmount] = useState(true);
   const [amount, setAmount] = useState(() => {
-    // Initialize state with value from local storage
     const savedAmount = localStorage.getItem("amount");
     const numericAmount = savedAmount ? parseFloat(savedAmount) : 0;
-    return isNaN(numericAmount) ? 0 : numericAmount; // Ensure it's a number
+    return isNaN(numericAmount) ? 0 : numericAmount;
   });
   const [inputAmount, setInputAmount] = useState("");
   const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Dynamically add the Flutterwave script
-    const script = document.createElement("script");
-    script.src = "https://checkout.flutterwave.com/v3.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Save amount to local storage whenever it changes
-    localStorage.setItem("amount", amount.toString());
-  }, [amount]);
-
-  const handleClick = () => {
+  const handlePayment = () => {
     const numericAmount = parseFloat(inputAmount.replace(/[^0-9.]/g, ""));
     if (isNaN(numericAmount) || numericAmount <= 0) {
-      alert("Please enter a valid amount.");
+      alert("Invalid amount");
       return;
     }
 
-    if (window.FlutterwaveCheckout) {
-      window.FlutterwaveCheckout({
-        public_key: "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X",
-        tx_ref: "txref-DI0NzMx13",
-        amount: numericAmount,
-        currency: "NGN",
-        payment_options: "card, banktransfer, ussd",
-        meta: {
-          source: "docs-inline-test",
-          consumer_mac: "92a3-912ba-1192a",
-        },
-        customer: {
-          email: "test@mailinator.com",
-          phone_number: "08100000000",
-          name: "Ayomide Jimi-Oni",
-        },
-        customizations: {
-          title: "Flutterwave Developers",
-          description: "Test Payment",
-          logo: "https://checkout.flutterwave.com/assets/img/rave-logo.png",
-        },
-        callback: function (data) {
-          // Update the amount with new payment
-          const newBalance = amount + numericAmount;
-          setAmount(newBalance);
-          navigate("/dashboard/wallet");
-        },
-        onclose: function() {
-          // Handle payment cancellation
-        }
-      });
-    } else {
-      console.error("FlutterwaveCheckout is not available");
-    }
+    const config = {
+      public_key: "FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X",
+      tx_ref: Date.now(), // Use unique tx_ref
+      amount: numericAmount, 
+      currency: 'NGN',
+      payment_options: 'card,mobilemoney,ussd',
+      customer: {
+        email: 'user@gmail.com',
+        phone_number: '070********',
+        name: 'john doe',
+      },
+      customizations: {
+        title: 'my Payment Title',
+        description: 'Funding my wallet',
+        logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+      },
+    };
 
-    setShowModal(false);
+    const handleFlutterPayment = useFlutterwave(config);
+
+    handleFlutterPayment({
+      callback: function (data) {
+        const newBalance = amount + numericAmount;
+        setAmount(newBalance);
+        localStorage.setItem("amount", newBalance); 
+        // Save transaction details in localStorage
+        const transaction = {
+          id: data.tx_ref,
+          amount: numericAmount,
+          date: new Date().toISOString(),
+          payment_options
+        };
+        
+        let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+        transactions.push(transaction);
+        localStorage.setItem("transactions", JSON.stringify(transactions));
+
+        navigate("/dashboard/wallet");
+        closePaymentModal(); 
+        setShowModal(false); 
+      },
+      onClose: function () {
+        setShowModal(false); 
+      }
+    }).catch(error => {
+      console.error('Payment error:', error);
+      closePaymentModal(); 
+      setShowModal(false); 
+    });
   };
 
   const toggleVisibility = () => {
@@ -95,12 +91,6 @@ export default function Card() {
   const handleInputChange = (event) => {
     setInputAmount(event.target.value);
   };
-
-  const topUp = () => {
-    alert("top-up");
-  };
-
-  const render = "123 4567 890";
 
   return (
     <>
@@ -156,7 +146,6 @@ export default function Card() {
                     padding: "8px 24px",
                     color: "#A1A4A8",
                   }}
-                  
                 >
                   <span className="mr-2">Send</span>
                   <img src={Framer2} />
@@ -166,7 +155,7 @@ export default function Card() {
                 className="text-white mt-10 text-base font-Modarat"
                 style={{ color: "#A1A4A8" }}
               >
-                <p className="">Unique Id: {render}</p>
+                <p className="">Unique Id: </p>
               </div>
             </div>
           </div>
@@ -190,7 +179,7 @@ export default function Card() {
             />
             <button
               className="w-full bg-customBlack font-Modarat text-white p-2 rounded-lg"
-              onClick={handleClick}
+              onClick={handlePayment}
             >
               Pay
             </button>

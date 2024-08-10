@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import SidebarHeader from "./dashboardHeader";
+import SidebarHeader from "./DashboardHeader";
 import DashboardSideBar from "./DashboardSideBar";
 
 const Dashboard = ({ children }) => {

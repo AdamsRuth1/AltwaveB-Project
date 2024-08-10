@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import LazyImage from "../dashboard/PayTuition/LazyImamge";
+import LazyImage from "../Dashboard/PayTuition/LazyImamge";
 const Post = ({ Blogs }) => {
   return (
     <main className="pt-[4.5rem]">

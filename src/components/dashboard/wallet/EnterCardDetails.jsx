@@ -1,6 +1,6 @@
 import React from 'react';
-import { useCardContext } from './../../../context/CardContext';
-import TopUpCard from './topupCard';
+import { useCardContext } from '../../../context/CardContext';
+import TopUpCard from './TopupCard';
 import Close from "../../../assets/images/close.png";
 import Arrow from "../../../assets/images/Icons Right.png";
 
