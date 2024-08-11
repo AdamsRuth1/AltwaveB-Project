@@ -1,5 +1,5 @@
 import Dashboard from "../../views/dashboard";
-import Card from "./CardComponent";
+import Card from "./cardComponent";
 const Wallets = () => {
   return (
     <Dashboard >
