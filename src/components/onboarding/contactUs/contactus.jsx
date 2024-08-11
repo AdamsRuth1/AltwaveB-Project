@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import Header from "../../Views/Header";
+import Header from "../../Views/header";
 import { NavLink } from "react-router-dom";
-import Footer from "../../Views/Footer";
+import Footer from "../../Views/footer";
 import Vector from "../../../assets/images/Vector (3).png";
 import Email from "../../../assets/images/email container.png";
 import Phone from "../../../assets/images/Phone container.png";

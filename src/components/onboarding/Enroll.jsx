@@ -1,5 +1,5 @@
-import Footer from "../Views/Footer";
-import Header from "../Views/Header";
+import Footer from "../Views/footer";
+import Header from "../Views/header";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
