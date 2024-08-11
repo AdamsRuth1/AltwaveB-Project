@@ -34,7 +34,6 @@ export default function Card() {
       tx_ref: Date.now(), // Use unique tx_ref
       amount: numericAmount, 
       currency: 'NGN',
-      payment_options: 'card,mobilemoney,ussd',
       customer: {
         email: 'user@gmail.com',
         phone_number: '070********',

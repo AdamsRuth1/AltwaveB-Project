@@ -18,6 +18,9 @@ const DashboardHome = () => {
       if (savedTransactions.length > 0) {
         setHasMadePayment(true);
         setTransactions(savedTransactions);
+      } else {
+        setHasMadePayment(false);
+        setTransactions([]); // Ensure transactions is set to an empty array if no data
       }
     };
 
@@ -59,7 +62,7 @@ const DashboardHome = () => {
                       <div className="flex justify-between items-center">
                         <p className="font-medium font-Modarat text-lg">Transaction Id: <span className="font-bold">{transaction.id}</span></p>  
                         <p style={{ color: "#606569" }} className="text-sm font-Modarat">{transaction.paymentType}</p>                     
-                         <p className="text-right font-base font-Modarat text-customBlack">Amount: ₦{transaction.amount.toFixed(2)}</p>
+                        <p className="text-right font-base font-Modarat text-customBlack">Amount: ₦{transaction.amount.toFixed(2)}</p>
                         <p  className="text-right font-base font-Modarat text-customBlack">Date: {new Date(transaction.date).toLocaleString()}</p>
                       </div>
                     </div>
@@ -68,7 +71,6 @@ const DashboardHome = () => {
               </div>
             </div>
           </div>
-        
         </div>
       ) : (
         <div className="bg-customLightBlueGray mt-16 rounded-lg border-b shadow-sm w-2/4 flex flex-col text-center">
