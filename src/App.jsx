@@ -20,7 +20,7 @@ import Dashboard from "./components/dashboard/dashbord/DashboardHome"
 import Eservice from "./components/E-service/Services";
 import Tuition from "./components/dashboard/PayTuition/Tuition";
 import Wallet from "./components/dashboard/wallet/Wallets";
-import TargetSavings from "./components/dashboard/target-Savings/Target";
+import TargetSavings from "./components/dashboard/target-Savings/target";
 
 import "./index.css";
 
