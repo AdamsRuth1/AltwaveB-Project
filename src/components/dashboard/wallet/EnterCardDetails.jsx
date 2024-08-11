@@ -1,33 +1,31 @@
-import React, { useState } from "react";
-import Arrow from "../../../assets/images/Icons Right.png";
+import React from 'react';
+import { useCardContext } from '../../../context/CardContext';
+import TopUpCard from './TopupCard';
 import Close from "../../../assets/images/close.png";
-import TopUpCard from "./topupCard";
+import Arrow from "../../../assets/images/Icons Right.png";
 
 export default function EnterCardDetails({ onClose }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [showTopUpCard, setShowTopUpCard] = useState(false);
+  const { setEnteredDetails } = useCardContext();
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [selectedOption, setSelectedOption] = React.useState("");
+  const [showTopUpCard, setShowTopUpCard] = React.useState(false);
 
   const handleProceedClick = (event) => {
-    event.preventDefault(); // Prevent form from submitting if using manual handling
+    event.preventDefault();
+    setEnteredDetails({ description: event.target.description.value, cardType: selectedOption });
     setShowTopUpCard(true);
   };
 
   const options = ["Single-use virtual card", "Multi-use virtual card"];
-
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
   };
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <>
       {showTopUpCard ? (
-        <div className="fixed inset-0 flex items-center justify-center ">
+        <div className="fixed inset-0 flex items-center justify-center">
           <div className="bg-white p-6 rounded-lg shadow-lg w-2/5">
             <TopUpCard onClose={() => setShowTopUpCard(false)} />
           </div>
@@ -66,27 +64,26 @@ export default function EnterCardDetails({ onClose }) {
                 name="cardType"
                 placeholder="Select card type"
                 value={selectedOption}
-                className="px-12 py-2 w-[100%] rounded border border-[#CCCCCC] mt-[8px]"
-                style={{ minWidth: "200px" }}
-                readOnly
+                className="px-12 py-2 rounded border border-[#CCCCCC] mt-[8px] w-full text-[#A1A4A8]"
+                
+                onClick={() => setIsOpen(!isOpen)}
                 required
               />
               <img
                 src={Arrow}
                 alt="Arrow"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer"
                 style={{ width: "20px", height: "20px" }}
-                onClick={toggleDropdown}
+                onClick={() => setIsOpen(!isOpen)}
               />
             </div>
             {isOpen && (
-              <div className="absolute top-full right-0 w-auto bg-white border border-[#CCCCCC] mt-1 z-10">
-                {options.map((option) => (
+              <div className="absolute top-full right-0 p-4 w-[248px] mt-2 bg-white border border-[#CCCCCC] rounded shadow-lg">
+                {options.map((option, index) => (
                   <div
-                    key={option}
-                    className="px-4 py-2 cursor-pointer hover:bg-gray-200"
+                    key={index}
+                    className="py-2 px-4 cursor-pointer hover:bg-gray-100"
                     onClick={() => handleOptionClick(option)}
-                    required
                   >
                     {option}
                   </div>
@@ -94,10 +91,9 @@ export default function EnterCardDetails({ onClose }) {
               </div>
             )}
           </div>
-
           <button
             type="submit"
-            className="bg-[#252E6A] mt-[40px] rounded-lg px-3 py-3 w-[100%] text-white"
+            className="bg-[#252E6A] text-white rounded-lg py-2 px-4 mt-4 w-full"
           >
             Proceed
           </button>

@@ -1,11 +1,11 @@
 import React from "react";
-import Card2 from "../../../assets/images/Cards.png";
-export default function CardTwo() {
+import Card3 from "../../../assets/images/Group 56.png";
+export default function CardThree() {
   return (
     <div>
-      <div className="" 
+      <div className=" " 
         style={{
-          backgroundImage: `url(${Card2})`,
+          backgroundImage: `url(${Card3})`,
           width: '364px', 
           height: '202.64px', 
           backgroundSize: 'cover', 

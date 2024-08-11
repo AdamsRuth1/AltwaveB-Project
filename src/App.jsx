@@ -5,6 +5,7 @@ import {
   Route,
   // Navigate,
 } from "react-router-dom";
+import { CardProvider } from "./context/CardContext"; // Updated import name
 import { SignupContextProvider } from "./context/SignupContext";
 import Landing from "./components/landingPage/landingPage";
 import EnrollPage from "./components/onboarding/Enroll";
@@ -19,6 +20,7 @@ import Dashboard from "./components/dashboard/dashbord/DashboardHome"
 import Eservice from "./components/E-service/Services";
 import Tuition from "./components/dashboard/PayTuition/Tuition";
 import Wallet from "./components/dashboard/wallet/Wallets";
+import TargetSavings from "./components/dashboard/TargetSavings/Target";
 
 import "./index.css";
 
@@ -27,6 +29,7 @@ function App() {
 
   return (
     <SignupContextProvider>
+      <CardProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
@@ -55,6 +58,10 @@ function App() {
             path="/dashboard/wallet"
             element={isLoggedIn ? <Wallet /> : <SignIn />}
           />
+           <Route
+              path="/dashboard/target-savings"
+              element={isLoggedIn ? <TargetSavings /> : <SignIn />}
+            />
 
           {/* <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/tuition" element={<Tuition />} />
@@ -62,6 +69,7 @@ function App() {
           <Route path="/dashboard/wallet" element={<Wallet />} /> */}
         </Routes>
       </Router>
+      </CardProvider>
     </SignupContextProvider>
   );
 }

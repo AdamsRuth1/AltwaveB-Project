@@ -41,7 +41,7 @@ export const Navbar = [
     name: "Target Saving",
     ActiveIcon: Service,
     InActiveIcon: ActiveSaving,
-    to: "Saving",
+    to: "target-savings",
   },
 ];
 
