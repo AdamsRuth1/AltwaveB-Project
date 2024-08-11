@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import { SignupContextProvider } from "./context/SignupContext";
 import { CardProvider } from "./context/CardContext"; // Updated import name
-import Landing from "./components/LandingPage/LandingPage";
+import Landing from "./components/landingPage/LandingPage";
 import EnrollPage from "./components/onboarding/Enroll";
 import SignIn from "./components/onboarding/SignIn";
 import SignUp from "./components/onboarding/SignUp";
