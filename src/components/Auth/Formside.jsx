@@ -2,18 +2,18 @@ import FormImage from "../../assets/images/SignIn-image.svg";
 
 const Formside = () => {
   return (
-    <section className=" ">
-      <div className="flex justify-center" style={{ paddingTop: "7rem" }}>
-        <img src={FormImage} alt="Image of a book" width={352} height={320} />
+    <section className="flex flex-col items-center px-4 py-6 lg:px-12 lg:py-8">
+      <div className="flex justify-center pt-16 lg:pt-28">
+        <img src={FormImage} alt="Image of a book" className="w-80 h-auto" />
       </div>
-      <div className="millik-font pb-[10.85rem] flex justify-center">
-        <h2 className="text-center w-[256px] h-[144px] pt-[2.6rem] font-normal text-[2.375rem] leading-[3rem] ">
+      <div className="text-center pt-12 lg:pt-16">
+        <h2 className="text-xl lg:text-3xl font-normal leading-tight text-gray-800">
           Pay Local. <br /> Study Global with
-          <span style={{ color: "#EB5757" }}> Tuition</span>
+          <span className="text-red-500"> Tuition</span>
         </h2>
       </div>
-      <div className="text-center w-[36rem] h-[4.5rem] font-normal text-[0.875rem] leading-[1.5rem] text-[#A1A4A8]">
-        <p className="pb-5">
+      <div className="text-center mt-6 lg:mt-10 px-4 lg:px-0">
+        <p className="text-sm lg:text-base text-gray-600">
           Tuition is powered by Swap, a product of Flutterwave Technology
           Solutions Limited - Licensed by the Central Bank of Nigeria in
           partnership with Kadavra BDC and Wema Bank

@@ -191,7 +191,7 @@ const SignupForm = () => {
               className={`input-style w-[84%]  h-[48px] ${
                 errorMessage.last_name ? "error-border" : ""
               }`}
-              required
+               required
             />
           </div>
         </div>
@@ -206,7 +206,6 @@ const SignupForm = () => {
             className={`input-style w-[81%]   h-[48px] ${
               errorMessage.password ? "error-border" : ""
             }`}
-            required
           />
           <span className="eyeIcon" onClick={handlePasswordVisibility}>
             {showpassword ? (
@@ -270,7 +269,6 @@ const SignupForm = () => {
               value={state.phone_number}
               onChange={handleChange}
               placeholder="+ Country Code Phone Number"
-              required
             />
           </div>
         </div>

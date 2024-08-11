@@ -2,43 +2,27 @@ import { Link } from "react-router-dom";
 
 const SignInFooter = ({ text, navigate, to, footerText, className }) => {
   return (
-    <>
-      <div className="pt-3 flex justify-center w-[81%] pb-[1.9rem]  ">
-        <p className="  font-normal text-[1rem] leading-[1rem] text-[#606569] ">
+    <div className="flex flex-col items-center px-4 py-6 lg:px-8 lg:py-8">
+      <div className="w-full max-w-md text-center mb-4">
+        <p className="text-sm md:text-base text-gray-600">
           {text}
-          <Link 
+          <Link
             to={to}
-            style={{
-              color: "#0A0E27",
-              fontWeight: "700",
-              cursor: "pointer",
-            }}
+            className="text-blue-800 font-semibold"
           >
             {navigate}
           </Link>
         </p>
-        
       </div>
-      <div
-        style={{
-          width: "29rem",
-          height: "4.5rem",
-          fontWeight: "400",
-          fontSize: "0.875rem",
-          lineHeight: "1.5rem",
-          color: "#A1A4A8",
-        }}
-        className="text-center w-[29rem] h-[4.5rem] font-normal text-[0.875rem] leading-[1.5rem] text-[#A1A4A8]"
-      >
-        <p className={`pb-5 ${className}`}>
+      <div className="w-full max-w-md text-center">
+        <p className={`text-xs md:text-sm text-gray-500 ${className}`}>
           By clicking “{footerText}”, I acknowledge that I have read and do
           hereby accept the terms and conditions in the Flutterwave's
-          <span style={{ textDecoration: "underline" }}>Term’s of Use</span>
-          and
-          <span style={{ textDecoration: "underline" }}>Privacy Policy</span>
+          <span className="underline"> Term’s of Use</span> and
+          <span className="underline"> Privacy Policy</span>
         </p>
       </div>
-    </>
+    </div>
   );
 };
 

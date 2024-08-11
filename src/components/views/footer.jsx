@@ -199,13 +199,13 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="flex mt-2 ml-20">
+      {/* <div className="flex mt-2 ml-20">
             <div className="ml-4 text-customGray ">&copy;</div>
             <p className="font-Modarat text-customGray text-base leading-6 ml-2 mt-1">
               Flutterwave Technology Solutions Limited Licensed by Central Bank
               of Nigeria
             </p>
-          </div>
+          </div> */}
 
       <div className="block sm:hidden">
         <div className="grid grid-cols-1">
