@@ -6,10 +6,10 @@ import {
 import { SignupContextProvider } from "./context/SignupContext";
 import { CardProvider } from "./context/CardContext"; // Updated import name
 import Landing from "./components/LandingPage/LandingPage";
-import EnrollPage from "./components/Onboarding/Enroll";
-import SignIn from "./components/Onboarding/SignIn";
-import SignUp from "./components/Onboarding/SignUp";
-import Blog from "./components/Onboarding/BlogPage";
+import EnrollPage from "./components/onboarding/Enroll";
+import SignIn from "./components/onboarding/SignIn";
+import SignUp from "./components/onboarding/SignUp";
+import Blog from "./components/onboarding/BlogPage";
 import EnrollSuccess from "./components/Onboarding/EnrollSuccess";
 import ContactUs from "./components/Onboarding/ContactUs/Contactus";
 import Faq from "./components/LandingPage/Faq";
