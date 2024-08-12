@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Profile from "../../../assets/images/Profile empty.png";
 import logo from "../../../assets/images/Vector (4).png";
-import Dashboard from "../../Views/Dashboard";
+import Dashboard from "../../views/dashboard";
 import PaginationBtn from './pagination';
-import HeaderMessage from "../../Views/MessageDashboard";
+import HeaderMessage from "../../views/messageDashboard";
 
 const DashboardHome = () => {
   const [hasMadePayment, setHasMadePayment] = useState(false);
