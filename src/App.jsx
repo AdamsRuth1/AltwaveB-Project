@@ -14,7 +14,7 @@ import SignUp from "./components/onboarding/SignUp";
 import Blog from "./components/onboarding/BlogPage";
 import EnrollSuccess from "./components/onboarding/EnrollSuccess";
 import ContactUs from "./components/onboarding/contactUs/contactus";
-import Faq from "./components/landingPage/Faq";
+import Faq from "./components/landingPage/faq";
 // import Dashboard from "./components/dashboard/DashboardHome";
 import Dashboard from "./components/dashboard/dashbord/DashboardHome"
 import Eservice from "./components/E-service/Services";
