@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Details from "./DetailsComponent";
-import RoundedCircleButton from "./Dotted";
-import Search from "./SearchFilter";
+import Details from "./detailsComponent";
+import RoundedCircleButton from "./dotted";
+import Search from "./searchFilter";
 
 // Sample cards data
 const Cards = [
