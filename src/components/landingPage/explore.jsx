@@ -12,9 +12,9 @@ import Download from "../../assets/images/Mobile mockups (1).png";
 import Mobile from "../../assets/images/Mobile mockups.png";
 import Google from "../../assets/images/Playstore icons (1).png"; 
 import Apple from "../../assets/images/Playstore icons.png";
-import Faq from "./Faq";
+import Faq from "./faq";
 import { FiArrowRight } from "react-icons/fi";
-import Testimonial from "./Testimonial";
+import Testimonial from "./testimonial";
 export default function AltWaveExplore() {
     return (
         <> 
