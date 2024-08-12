@@ -8,7 +8,7 @@ import Framer2 from "../../../assets/images/Frame (1).png";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import History from "./history";
 import Button from "../Target-Savings/Button";
-import AddWallet from "./addWallet";
+import AddWallet from ".";
 
 export default function Card() {
   const [selected, setSelected] = useState("US");
