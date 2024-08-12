@@ -9,11 +9,11 @@ export default function DashboardMessage() {
 
     return (
         visible && (
-            <div style={{
+            <div className='' style={{
                 backgroundColor: "#0F1316",
                 borderRadius: "16px 0 16px 16px", // Top-right corner is sharp
                 padding: "16px",
-                width: "260px",
+                width: "264px",
             }}>
                 <div>
                     <div className="flex justify-end mb-4">

@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import { Navigation } from "swiper/modules";
 import { useCardContext } from "../../../context/CardContext";
-import FirstCard from "./CardDesign";
+import FirstCard from "./cardDesign2";
 import SecondCard from "./cardDesign1";
 import ThirdCard from "./cardDesign3";
 import FourthCard from "./cardDesign4";
