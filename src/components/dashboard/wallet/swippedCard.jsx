@@ -8,10 +8,10 @@ import "swiper/css/free-mode";
 import { Navigation } from "swiper/modules";
 import { useCardContext } from "../../../context/CardContext";
 import FirstCard from "./CardDesign";
-import SecondCard from "./CardDesign1";
-import ThirdCard from "./CardDesign3";
-import FourthCard from "./CardDesign4";
-import EnterCardDetails from "./EnterCardDetails";
+import SecondCard from "./cardDesign1";
+import ThirdCard from "./cardDesign3";
+import FourthCard from "./cardDesign4";
+import EnterCardDetails from "./enterCardDetails";
 
 export default function Swip() {
   const { setCardDetails } = useCardContext();
