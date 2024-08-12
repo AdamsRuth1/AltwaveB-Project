@@ -1,7 +1,7 @@
 import React from "react";
-import Close from "../../../assets/images/close.png"; // Update the path as necessary
-import Swip from "./SwippedCard"; // Ensure Swip component is correctly imported
-import Atm from "../../../assets/images/ATM Illustration.png"; // Update the path as necessary
+import Close from "../../../assets/images/close.png"; 
+import Swip from "./swippedCard"; 
+import Atm from "../../../assets/images/ATM Illustration.png";
 const Pop = ({ isOpen, onClose }) => {
   const [showSwip, setShowSwip] = React.useState(false);
 
