@@ -1,4 +1,4 @@
-import Dashboard from "../Views/Dashboard";
+import Dashboard from "../views/dashboard";
 import EserviceInfor from "../E-service/EserviceInfor";
 import { useState } from "react";
 import TuitionStatus from "../Dashboard/PayTuition/TuitionStatus";
