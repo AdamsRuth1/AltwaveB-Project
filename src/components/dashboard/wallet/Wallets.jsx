@@ -1,4 +1,4 @@
-import Dashboard from "../../Views/Dashboard";
+import Dashboard from "../../views/dashboard";
 import Card from "./CardComponent";
 import  HeaderMessage from "../../Views/MessageDashboard";
 const Wallets = () => {
