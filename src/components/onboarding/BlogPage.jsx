@@ -1,4 +1,4 @@
-import Header from "../Views/Header";
+import Header from "../views/header";
 import Logo from "../../assets/images/SigninLogo copy.svg";
 import Input from "../Blog/Input";
 import { useState } from "react";
