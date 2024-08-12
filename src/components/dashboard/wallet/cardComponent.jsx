@@ -7,7 +7,7 @@ import Framer from "../../../assets/images/Frame.png";
 import Framer2 from "../../../assets/images/Frame (1).png";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import History from "./history";
-import Button from "../Target-Savings/Button";
+import Button from "../target-Savings/Button";
 import AddWallet from "./addWallet";
 
 export default function Card() {
