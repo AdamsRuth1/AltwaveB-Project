@@ -3,7 +3,7 @@ import React from "react";
 import logo from "../../assets/images/Hero Images.png";
 import Footer from "../views/footer";
 import Header from "../views/header";
-import AltWaveExplore from "./Explore";
+import AltWaveExplore from "./explore";
 import Why from "./Whyaltwave";
 import { NavLink, useLocation } from "react-router-dom";
 
