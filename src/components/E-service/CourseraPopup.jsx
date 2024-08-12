@@ -1,6 +1,6 @@
 import StarIcon from "../../assets/Icons/StarIcon.svg";
 import CloseIcon from "../../assets/Icons/closeIcon.svg";
-import Button from "../Dashboard/Button";
+import Button from "../dashboard/Button";
 import { Link } from "react-router-dom";
 const CourseraPopup = ({ handleClose }) => {
   return (
