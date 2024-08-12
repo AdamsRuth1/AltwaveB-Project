@@ -71,7 +71,7 @@ const DashboardHome = () => {
             </div>
             <div>
               <h1 className="font-Modarat font-bold text-2xl text-customBlack mb-4">
-                Your Saved Cards
+              Your Transactions
               </h1>
               <div className="mt-8" style={{ marginLeft: "32px", marginRight: "32px" }}>
                 {savedCardDetails.map((card, index) => (
