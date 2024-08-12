@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Close from "../../../assets/images/close.png";
 import SpinningWheel from "../../../assets/images/Spinning wheel.png";
-import "./Animation.css";
-import CardSuccessful from "./Successful";
+import "./animation.css";
+import CardSuccessful from "./successful";
 
 export default function PrepingCard({ onClose }) {
   const [isSpinning, setIsSpinning] = useState(true);
