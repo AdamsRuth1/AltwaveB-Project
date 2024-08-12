@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import logo from "../../assets/images/Hero Images.png";
-import Footer from "../Views/Footer";
-import Header from "../Views/Header";
+import Footer from "../views/footer";
+import Header from "../views/header";
 import AltWaveExplore from "./Explore";
 import Why from "./Whyaltwave";
 import { NavLink, useLocation } from "react-router-dom";
