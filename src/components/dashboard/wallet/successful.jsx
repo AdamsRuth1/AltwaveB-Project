@@ -1,6 +1,6 @@
 import React from "react";
 import SuccessfulImage from "../../../assets/images/Success checkmark.png";
-import CardDetails from "./SeeCardDetails";
+import CardDetails from "./seeCardDetails";
 import Close from "../../../assets/images/close.png";
 
 export default function Successful() {
