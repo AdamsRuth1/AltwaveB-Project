@@ -4,7 +4,7 @@ import logo from "../../assets/images/Hero Images.png";
 import Footer from "../views/footer";
 import Header from "../views/header";
 import AltWaveExplore from "./explore";
-import Why from "./Whyaltwave";
+import Why from "./whyaltwave";
 import { NavLink, useLocation } from "react-router-dom";
 
 export default function Landing() {
