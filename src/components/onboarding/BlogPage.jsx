@@ -13,7 +13,7 @@ import Blog6 from "../../assets/images/Blogimage6.png";
 import Pagination from "../Blog/Pagination";
 import Newsletter from "../Blog/Newletter";
 import searchIcon from "../../assets/Icons/search-icon.png";
-import Footer from "../Views/Footer";
+import Footer from "../views/footer";
 const BlogPage = () => {
   const Blogs = [
     {
